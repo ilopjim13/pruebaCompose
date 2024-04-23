@@ -47,11 +47,11 @@ fun Ejercicio2() {
 
 @Composable
 @Preview
-fun Ejemplos(color: Color, fracion: Float) {
+fun Ejemplos(color: Color, fracion: Float, texto:String) {
     Box(
         modifier = Modifier.background(color).fillMaxHeight(fracion)
     ) {
-        Text("Ejemplo 1")
+        Text(texto)
     }
 }
 
@@ -64,13 +64,13 @@ fun Ejercicio3() {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
-            modifier = Modifier.fillMaxHeight()
+            modifier = Modifier.fillMaxSize()
         ) {
 
-            Ejemplos(Color.Red, 0.2f)
-            Ejemplos(Color.Gray, 0.4f)
-            Ejemplos(Color.Cyan, 0.6f)
-            Ejemplos(Color.Green, 1f)
+            Ejemplos(Color.Red, 0.2f, "Ejemplo 1")
+            Ejemplos(Color.Gray, 0.4f, "Ejemplo 2")
+            Ejemplos(Color.Cyan, 0.6f, "Ejemplo 3")
+            Ejemplos(Color.Green, 1f, "Ejemplo 4")
 
         }
     }
@@ -80,25 +80,30 @@ fun Ejercicio3() {
 @Preview
 fun Ejercicio4() {
     Row(
-        modifier = Modifier.fillMaxHeight()
-            .padding(40.dp, 500.dp, 0.dp, 0.dp)
-            .border(2.dp, Color.Red)
-    ) { Text("Ejemplo 1") }
-    Row(
-        modifier = Modifier.fillMaxHeight()
-            .padding(150.dp, 600.dp, 0.dp, 0.dp)
-            .border(2.dp, Color.Blue)
-    ) { Text("Ejemplo 2") }
-    Row(
-        modifier = Modifier.fillMaxHeight()
-            .padding(250.dp, 700.dp, 0.dp, 0.dp)
-            .border(2.dp, Color.Red)
-    ) { Text("Ejemplo 3") }
-    Row(
-        modifier = Modifier.fillMaxHeight()
-            .padding(350.dp, 800.dp, 0.dp, 0.dp)
-            .border(2.dp, Color.Blue)
-    ) { Text("Ejemplo 4") }
+        horizontalArrangement = Arrangement.SpaceAround,
+        modifier = Modifier.fillMaxSize()
+    ) {
+        Row(
+            modifier = Modifier.fillMaxHeight()
+                .padding(0.dp, 500.dp, 0.dp, 0.dp)
+                .border(2.dp, Color.Red)
+        ) { Text("Ejemplo 1") }
+        Row(
+            modifier = Modifier.fillMaxHeight()
+                .padding(0.dp, 600.dp, 0.dp, 0.dp)
+                .border(2.dp, Color.Blue)
+        ) { Text("Ejemplo 2") }
+        Row(
+            modifier = Modifier.fillMaxHeight()
+                .padding(0.dp, 700.dp, 0.dp, 0.dp)
+                .border(2.dp, Color.Red)
+        ) { Text("Ejemplo 3") }
+        Row(
+            modifier = Modifier.fillMaxHeight()
+                .padding(0.dp, 800.dp, 0.dp, 0.dp)
+                .border(2.dp, Color.Blue)
+        ) { Text("Ejemplo 4") }
+    }
 }
 
 @Composable
@@ -151,9 +156,7 @@ fun Ejercicio6() {
                 .border(2.dp, Color.Black)
                 .padding(10.dp)) }
 
-        Row(
-
-        ) {
+        Row {
             Box(
                 contentAlignment = Alignment.BottomCenter,
                 modifier = Modifier
@@ -203,6 +206,6 @@ fun main() = application {
         title = "Ejercicios",
         state = windowState
     ) {
-        Ejercicio6()
+        Ejercicio3()
     }
 }
